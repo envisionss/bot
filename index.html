@@ -9,11 +9,23 @@
       background-color: #36393f;
       color: #ffffff;
       font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
       margin: 0;
+      padding-top: 60px; /* Ensure content doesn't go under fixed warning */
+    }
+    .warning {
+      background-color: #ff4d4d;
+      color: #ffffff;
+      padding: 10px;
+      text-align: center;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000; /* Ensure it's above other content */
+    }
+    .warning-content {
+      max-width: 600px;
+      margin: 0 auto;
     }
     .container {
       text-align: center;
@@ -23,6 +35,8 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
       max-width: 600px;
       width: 100%;
+      margin: auto; /* Center the container horizontally */
+      margin-top: 80px; /* Leave space below the fixed warning */
     }
     h1 {
       font-size: 32px;
@@ -78,6 +92,12 @@
   </style>
 </head>
 <body>
+  <div class="warning">
+    <div class="warning-content">
+      <strong>WARNING:</strong> This Might Rate-Limit Your Account If You Do Too Much Commands!<br>
+      If You Get Rate Limited, You Will Have To Use A VPN To Use Discord Until Your Account Is Unrate Limited
+    </div>
+  </div>
   <div class="container">
     <h1>Discord Bot</h1>
     
