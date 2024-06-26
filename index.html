@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discord Bot</title>
+  <style>
+    body {
+      background-color: #36393f;
+      color: #ffffff;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      text-align: center;
+      padding: 20px;
+      border-radius: 10px;
+      background-color: #2c2f33;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+      max-width: 600px;
+      width: 100%;
+    }
+    h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: #7289da;
+    }
+    .invite-section, .command-section {
+      padding: 20px;
+      background-color: #43474e;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+    .invite-section input[type="text"] {
+      width: calc(100% - 120px);
+      padding: 10px;
+      border-radius: 5px;
+      text-align: center;
+      border: none;
+      background-color: #4f545c;
+      color: #ffffff;
+      outline: none;
+      font-size: 14px;
+    }
+    .invite-section .copy-button {
+      background-color: #7289da;
+      color: #ffffff;
+      border: none;
+      padding: 10px 20px;
+      margin-left: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      font-size: 14px;
+    }
+    .invite-section .copy-button:hover {
+      background-color: #677bc4;
+    }
+    .command-info {
+      text-align: left;
+      background-color: #43474e;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    .command-info h3 {
+      font-size: 20px;
+      color: #7289da;
+      margin-bottom: 10px;
+    }
+    .command-info p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Discord Bot</h1>
+    
+    <!-- Invite Section -->
+    <div class="invite-section">
+      <input type="text" id="inviteURL" value="https://discord.com/oauth2/authorize?client_id=1255209877890928822&permissions=8&scope=bot" readonly>
+      <button class="copy-button" onclick="copyToClipboard()">Copy Invite Link</button>
+    </div>
+    
+    <!-- Command Section -->
+    <div class="command-info">
+      <h3>Bot Commands</h3>
+      <p><strong>.hi</strong> - Makes channels. Example: ".hi 5 lol" makes 5 channels named "lol".</p>
+      <p><strong>.spam</strong> - Spams all channels. Example: ".spam 5 @everyone" spams all channels with 5 messages saying "@everyone".</p>
+      <p><strong>.del</strong> - Deletes all channels.</p>
+    </div>
+  </div>
+
+  <script>
+    function copyToClipboard() {
+      var copyText = document.getElementById("inviteURL");
+      copyText.select();
+      copyText.setSelectionRange(0, 99999);
+      document.execCommand("copy");
+      alert("Copied the invite link: " + copyText.value);
+    }
+  </script>
+</body>
+</html>
